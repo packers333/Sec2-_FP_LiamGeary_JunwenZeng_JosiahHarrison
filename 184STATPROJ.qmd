@@ -19,6 +19,7 @@ Our research question has been looked into before with some of the big examples 
 The data as mentioned above, are from Kaggle, the World Education Data Set from the data source World Bank. The data meets the FAIR and CARE principles, it is findable, and easy to access because it is on the web page of Kaggle, and anyone can find it easily. It is accessible, there’s no barrier preventing any user from downloading the dataset, therefore anyone can access it. It is interoperable, although the data does have some limitations, with proper piping and cleaning up the data, it can be integrated and used alongside other data. The data is reusable, in the webpage of Kaggle, there are written potential use cases, key questions, and some notes to guide the user of the data when the dataset might be in use. The data meets the collective benefit, it can be used to evaluate how well the government expenditure impacts several aspects of the country, beneficial in enhancing the economic outcomes. The data has the authority of control
 
 For our study we will measure the quality of education by looking at the relationship between education percent spending with literacy rate, primary school completion percent, school enrollment rate, and teacher pupil ratio.
+## Data Exploration
 
 ```{r}
 data <- read.csv("world-education-data.csv")
