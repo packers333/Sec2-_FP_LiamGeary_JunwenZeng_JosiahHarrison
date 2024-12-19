@@ -120,3 +120,11 @@ ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = school_enrol_primary_pct)) 
   ) +
   theme_minimal()
 ```
+
+## Results
+We found that government expenditure on education as a percentage of GDP was very similar across countries. Literacy rates were the highest for ountries with similar government expenditure. Countries with high completion rate of school had high literacy rate. Pupil-Teacher ratio was a valuable metric that most schools were strong in. That being that the lower the ratio, the better the quality of education for students. 
+
+Analyzing specific countries and looking for insights by regions is a further study that can be done on the data. Our dataset was also reduced due to many empty values, so getting a more informed dataset would have allowed us to analyze the rates over time. This was an informative analysis into the data from a broad landscape, and relationships in our data need further study before concluding definitive relationships. Some are intuitive, such as high literacy rate corresponding to high completion rate in schooling, but still studies can take this analysis deeper and greater in scope. 
+
+## References
+Student-Teacher Ratios: A Guide | The Hun School. https://www.hunschool.org/resources/student-teacher-ratios. Accessed 18 Dec. 2024.
