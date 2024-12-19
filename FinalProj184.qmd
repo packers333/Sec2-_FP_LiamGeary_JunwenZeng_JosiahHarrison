@@ -1,0 +1,25 @@
+---
+title: "FinalProj184"
+format: pdf
+editor: visual
+---
+
+### Exploring Government Expenditure on Education Impact on Education
+
+### Liam Geary, Josiah Harrison, Junwen Zeng
+
+With the recent election here in the US a major topic that is frequently brought up is how to improve the education in this country. A major issue with this debate is how drastically opinions can differ between people, with questions of how education has changed for better or worse, what is causing these changes, and even Here we want to focus on the topic that is discussed the most in this debate, which is how increasing funding impacts education.
+
+This is relativity common belief held by many Americans, which is why in this report we will be using data from the World Education Data Set to explore the relationship between
+
+### Literature Review
+
+```{r}
+
+```
+
+You can add options to executable code like this
+
+```{r}
+
+```
