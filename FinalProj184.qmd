@@ -4,19 +4,19 @@ format: pdf
 editor: visual
 ---
 
-### Exploring Government Expenditure on Education Impact on Education
+## Exploring Government Expenditure on Education Impact on Education
 
-### Liam Geary, Josiah Harrison, Junwen Zeng
+## Liam Geary, Josiah Harrison, Junwen Zeng
 
 With the recent election here in the US a major topic that is frequently brought up is how to improve the education in this country. A major issue with this debate is how drastically opinions can differ between people, with questions of how education has changed for better or worse, what is causing these changes, and even how to measure a good education. Here we want to focus on the topic that is discussed the most in this debate, which is how increasing funding impacts education.
 
 This is relativity common belief held by many Americans, which is why in this report we will be using data from the World Education Data Set to explore the relationship between percent of GDP spent on education and education for that country. We will start by going over relevant background information, then go into how we created our study, what we are looking for, the data we are looking at, issues we ran into, then we will go in depth on our findings from the study and talk about what we see from the data
 
-### Background Information
+## Background Information
 
 Our research question has been looked into before with some of the big examples being a 2017 study from the Learning Policy Institute, as well as a collection of studies from 2024 from Research.com which went over the states that spend the most on education, where they get the money, and how good their education is. The general consensus from both studies is that yes, the more money you spend the better the education will be. What is interesting is to see how they measure th quality of the education by looking at resources available to teachers and students, teacher student ratio, as well as success rate of the students which here means graduation rates, average GPA and so on. How their research was conducted did inspire us to choose certain categories for our research like teacher student ratio, but our main difference is we took less of an interest in how spending affects resources for teacher and student since we mainly wanted to focus on variables that more directly correlate to a better education like literacy rate, and graduation rates since we found them more important and to the point.
 
-### Methodology
+## Methodology
 
 The data as mentioned above, are from Kaggle, the World Education Data Set from the data source World Bank. The data meets the FAIR and CARE principles, it is findable, and easy to access because it is on the web page of Kaggle, and anyone can find it easily. It is accessible, there’s no barrier preventing any user from downloading the dataset, therefore anyone can access it. It is interoperable, although the data does have some limitations, with proper piping and cleaning up the data, it can be integrated and used alongside other data. The data is reusable, in the webpage of Kaggle, there are written potential use cases, key questions, and some notes to guide the user of the data when the dataset might be in use. The data meets the collective benefit, it can be used to evaluate how well the government expenditure impacts several aspects of the country, beneficial in enhancing the economic outcomes. The data has the authority of control
 
@@ -49,6 +49,7 @@ summarized_data <- data %>%
     school_enrol_primary_pct = mean(school_enrol_primary_pct, na.rm = TRUE)
   )
 
+### Data Visualizations
 ```
 The first try of the table, I tried to color-code each country, but due to color-coding all of the countries, each country has a legend label, and the graph is nowhere to be seen, the legend labels even crashed the R program.
 
@@ -145,3 +146,10 @@ ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = school_enrol_primary_pct)) 
   ) +
   theme_minimal()
 ```
+## Results
+We found that government expenditure on education as a percentage of GDP was very similar across countries. Literacy rates were the highest for ountries with similar government expenditure. Countries with high completion rate of school had high literacy rate. Pupil-Teacher ratio was a valuable metric that most schools were strong in. That being that the lower the ratio, the better the quality of education for students. 
+
+Analyzing specific countries and looking for insights by regions is a further study that can be done on the data. Our dataset was also reduced due to many empty values, so getting a more informed dataset would have allowed us to analyze the rates over time. This was an informative analysis into the data from a broad landscape, and relationships in our data need further study before concluding definitive relationships. Some are intuitive, such as high literacy rate corresponding to high completion rate in schooling, but still studies can take this analysis deeper and greater in scope. 
+
+## References
+Student-Teacher Ratios: A Guide | The Hun School. https://www.hunschool.org/resources/student-teacher-ratios. Accessed 18 Dec. 2024.
