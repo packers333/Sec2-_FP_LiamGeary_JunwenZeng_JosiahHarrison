@@ -18,12 +18,125 @@ Fork Repository test test
 
 ### Literature Review
 
-```{r}
+Install the "readr" Package and get the data from my .csv file.
 
+```{r}
+install.packages("readr")
+library(readr)
+
+data <- read_csv("/Users/junwen/Desktop/Stat\ 184/world-education-data.csv")
 ```
 
-You can add options to executable code like this
+Summarize the data to keep the values I need, and also remove the year to keep the mean value in terms of each country.
 
 ```{r}
+install.packages("dplyr")
+library(dplyr)
 
+
+summarized_data <- data %>%
+  group_by(country) %>%
+  summarize(
+    gov_exp_pct_gdp = mean(gov_exp_pct_gdp, na.rm = TRUE),
+    pri_comp_rate_pct = mean(pri_comp_rate_pct, na.rm = TRUE),
+    lit_rate_adult_pct = mean(lit_rate_adult_pct, na.rm = TRUE),
+    pupil_teacher_primary = mean(pupil_teacher_primary, na.rm = TRUE),
+    pupil_teacher_secondary = mean(pupil_teacher_secondary, na.rm = TRUE),
+    school_enrol_primary_pct = mean(school_enrol_primary_pct, na.rm = TRUE)
+  )
+
+```
+The first try of the table, I tried to color-code each country, but due to color-coding all of the countries, each country has a legend label, and the graph is nowhere to be seen, the legend labels even crashed the R program.
+
+```{r}
+install.packages("ggplot2")
+library(ggplot2)
+
+# 1st
+ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = lit_rate_adult_pct, color = country)) +
+  geom_point(size = 3) +
+  labs(
+    title = "Government Expenditure(In percentage of GDP) vs Literacy Rate by Country",
+    x = "Government Expenditure",
+    y = "Literacy Rate"
+  ) +
+  theme_minimal()
+
+```
+After removing the legend labels, the color code became meaningless.
+```{r}
+# 2nd
+ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = lit_rate_adult_pct)) +
+  geom_point(size = 3) +
+  labs(
+    title = "Government Expenditure(In percentage of GDP) vs Literacy Rate by Country",
+    x = "Government Expenditure",
+    y = "Literacy Rate"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+The third visualization looks the best, it is quite tidy. This is the visualization of Government Expenditure(In percentage of GDP) vs Literacy Rate by Country.
+```{r}
+# 3rd
+ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = lit_rate_adult_pct)) +
+  geom_point(color = "black", size = 3) +
+  geom_smooth(method = "lm", color = "blue", se = TRUE) +
+  labs(
+    title = "Government Expenditure(In percentage of GDP) vs Literacy Rate by Country",
+    x = "Government Expenditure",
+    y = "Literacy Rate"
+  ) +
+  theme_minimal() +
+  scale_y_continuous(limits = c(30, 100))
+
+```
+This is the visualization of Government Expenditure(In percentage of GDP) vs Primary School Completion Rate Percentage by Country.
+```{r}
+ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = pri_comp_rate_pct)) +
+  geom_point(color = "black", size = 3) +
+  geom_smooth(method = "lm", color = "blue", se = TRUE) +
+  labs(
+    title = "Government Expenditure(In percentage of GDP) vs Primary School Completion Rate Percentage by Country",
+    x = "Government Expenditure",
+    y = "Primary School Completion Rate"
+  ) +
+  theme_minimal() +
+  scale_y_continuous(limits = c(30, 100))
+```
+This is the visualization of Government Expenditure(In percentage of GDP) vs Primary School Pupil Teacher Ratio by Country.
+```{r}
+ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = pupil_teacher_primary)) +
+  geom_point(color = "black", size = 3) +
+  geom_smooth(method = "lm", color = "blue", se = TRUE) +
+  labs(
+    title = "Government Expenditure(In percentage of GDP) vs Primary School Pupil Teacher Ratio by Country",
+    x = "Government Expenditure",
+    y = "Primary School Pupil Teacher Ratio"
+  ) +
+  theme_minimal()
+```
+This is the visualization of Government Expenditure(In percentage of GDP) vs Secondary School Pupil Teacher Ratio by Country.
+```{r}
+ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = pupil_teacher_secondary)) +
+  geom_point(color = "black", size = 3) +
+  geom_smooth(method = "lm", color = "blue", se = TRUE) +
+  labs(
+    title = "Government Expenditure(In percentage of GDP) vs Secondary School Pupil Teacher Ratio by Country",
+    x = "Government Expenditure",
+    y = "Secondary School Pupil Teacher Ratio"
+  ) +
+  theme_minimal()
+```
+This is the visualization of Government Expenditure(In percentage of GDP) vs Primary School Enrollment Rate by Country.
+```{r}
+ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = school_enrol_primary_pct)) +
+  geom_point(color = "black", size = 3) +
+  geom_smooth(method = "lm", color = "blue", se = TRUE) +
+  labs(
+    title = "Government Expenditure(In percentage of GDP) vs Primary School Enrollment Rate by Country",
+    x = "Government Expenditure",
+    y = "Primary School Enrollment Rate"
+  ) +
+  theme_minimal()
 ```
