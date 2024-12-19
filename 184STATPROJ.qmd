@@ -22,6 +22,7 @@ For our study we will measure the quality of education by looking at the relatio
 ## Data Exploration
 
 ```{r}
+library(readr)
 data <- read.csv("world-education-data.csv")
 ```
 
