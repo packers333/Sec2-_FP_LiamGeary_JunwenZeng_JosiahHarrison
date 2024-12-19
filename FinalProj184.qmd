@@ -80,7 +80,7 @@ ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = lit_rate_adult_pct)) +
   theme_minimal() +
   theme(legend.position = "none")
 ```
-The third visualization looks the best, it is quite tidy. This is the visualization of Government Expenditure(In percentage of GDP) vs Literacy Rate by Country.
+The third visualization looks the best, it is quite tidy. This is the visualization of Government Expenditure(In percentage of GDP) vs Literacy Rate by Country. We focused on the numbers, not paying too much attention to which countries were attributed to each dot. Diving into which countries have highest literacy rates with respect to their government expenditure is a great further analysis of this project and data. A comforting statistic found is that most countries are above the 60% literacy rate, with a large amount above 80%. Most of the government expenditures across countries are in the same percentage of their respective GDP, so the spread of literacy rates is fascinating.
 ```{r}
 # 3rd
 ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = lit_rate_adult_pct)) +
@@ -95,7 +95,7 @@ ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = lit_rate_adult_pct)) +
   scale_y_continuous(limits = c(30, 100))
 
 ```
-This is the visualization of Government Expenditure(In percentage of GDP) vs Primary School Completion Rate Percentage by Country.
+This is the visualization of Government Expenditure(In percentage of GDP) vs Primary School Completion Rate Percentage by Country. The literacy rate and completion rate graphs were almost identical. This makes sense because those that complete school, would contribute to the literacy rate. Some countries had higher expenditure than most, nearing or surpassing 10% but marginal increases, if any, in completion rate.
 ```{r}
 ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = pri_comp_rate_pct)) +
   geom_point(color = "black", size = 3) +
@@ -108,7 +108,8 @@ ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = pri_comp_rate_pct)) +
   theme_minimal() +
   scale_y_continuous(limits = c(30, 100))
 ```
-This is the visualization of Government Expenditure(In percentage of GDP) vs Primary School Pupil Teacher Ratio by Country.
+This is the visualization of Government Expenditure(In percentage of GDP) vs Primary School Pupil Teacher Ratio by Country. This visualization looks at Government Expenditure on education (as a percentage of GDP) vs Primary School Pupil Teacher Ratio by Country. Pupil Teacher Ratio is one of the strongest indicators of student success and engagement, according to the Hun School of Princeton. The less number of students assigned to a professor, the more time and attention are given to students. Government expenditure plays an important role in this ratio because of the funds devoted to hiring teachers. The dots represent countries of the study, with most around the 20-1 pupil-teacher ratio. This is a valuable insight because our entire analysis is a broad look at educations systems across the world. Seeing many places have a low ratio is very good for the well-being of the students in those areas.
+
 ```{r}
 ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = pupil_teacher_primary)) +
   geom_point(color = "black", size = 3) +
@@ -120,7 +121,7 @@ ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = pupil_teacher_primary)) +
   ) +
   theme_minimal()
 ```
-This is the visualization of Government Expenditure(In percentage of GDP) vs Secondary School Pupil Teacher Ratio by Country.
+This is the visualization of Government Expenditure(In percentage of GDP) vs Secondary School Pupil Teacher Ratio by Country. Secondary School pupil-teacher ratio is very similar to the primary school ratio. Primary school is typically ages 5-11, while secondary school is the next bracket of ages 12-18. There are some outliers that have 30+ ratio, but most fall in the 10-25 ratio. 
 ```{r}
 ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = pupil_teacher_secondary)) +
   geom_point(color = "black", size = 3) +
@@ -132,7 +133,7 @@ ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = pupil_teacher_secondary)) +
   ) +
   theme_minimal()
 ```
-This is the visualization of Government Expenditure(In percentage of GDP) vs Primary School Enrollment Rate by Country.
+This is the visualization of Government Expenditure(In percentage of GDP) vs Primary School Enrollment Rate by Country. We explored government expenditure versus Primary School Enrollment Rate by Country to see any relationship. We found many countries at or above the 100 rate. This is because the enrollment rate of analysis is the gross enrollment. So it takes people outside of the age group because they enrolled at primary school. So the rate can be 100. If it were the net enrollment rate, than it would not be able to surpass 100%. 
 ```{r}
 ggplot(summarized_data, aes(x = gov_exp_pct_gdp, y = school_enrol_primary_pct)) +
   geom_point(color = "black", size = 3) +
